@@ -1,38 +1,268 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  --glavna-boja: #0F0F0F;
+  --druga-tamna: #232D3F;
+  --zelena:  #008170;
+  --zelena-tamna:  #005B41;
+  
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  margin: 1rem;
+  color: var(--zelena);
+}
+
+body {
+  background: var(--glavna-boja);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::placeholder{
+  color: var(--druga-tamna);
+}
+
+/* navbar */
+.navbar {
+  width: 100%;
+  background-color: var(--druga-tamna);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-container{
+  display: flex;
+  align-items: center;
+}
+
+.navbar .links {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.links a {
+  color: var(--zelena);
+  text-decoration: none;
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.links a:hover{
+  color: var(--zelena-tamna);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar .user {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-right: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.user p {
+  font-size: 15px;
+  margin-right: 10px;
+  color: var(--zelena);
+  font-weight: 600;
+}
+.userNav img {
+  border-radius: 50%;
+  margin: 0 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.userNav{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly ;
+  width: 200px;
+}
+
+.userNav img{
+  margin: 0 5px 
+}
+
+.logoutBtn{
+  padding: 0.5rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background: var(--zelena);
+}
+.logoutBtn:hover{
+  background: var(--zelena-tamna);
+}
+
+.login-page h1{
+  margin-bottom: 100px;
+}
+
+.login-page div{
+  margin: auto;
+  padding: 70px ;
+  border-radius: 10px;
+  width: 500px;
+  background: var(--druga-tamna);
+}
+.login-page div button{
+  padding: 0.7rem 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* error-page */
+#error-page{
+  margin: 0;
+  padding: 0;
+}
+#error-page h2{
+  margin-bottom: 100px;
+}
+
+.btn{
+  color: black;
+  text-decoration: none;
+  font-size: 2rem;
+  background: var(--zelena);
+  padding: 0.7rem 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-radius: 10px;
+
+}
+
+.btn:hover{
+  background: var(--zelena-tamna);
+}
+
+
+/* main-page */
+
+#main-page h1{
+  margin-bottom: 3rem;
+}
+
+
+
+
+.main-page__posts{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  padding: 20px;
+}
+
+
+
+/* create form page */
+.create-form-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+form{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--druga-tamna);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+input,
+textarea{
+  width: 300px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background: var(--zelena);
+  color: var(--druga-tamna);
+}
+
+
+
+textarea{
+  margin: 10px 0;
+  height: 100px;
+}
+
+form p {
+  color: red;
+}
+
+input:last-of-type{
+  margin-top: 20px;
+}
+
+.post-div{
+  background: var(--druga-tamna);
+  width: 500px;
+  border-radius: 10px;
+  padding: 10px;
+  color: var(--glavna-boja);
+}
+
+
+.post__footer{
+  display: flex;
+  justify-content: space-evenly ;
+  align-items: center;
+}
+.post__footer p{
+  font-weight: 700;
+  color: var(--zelena);
+}
+
+.post__footer button{
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: transform 0.4s;
+}
+.post__footer button:hover{
+  transform: scale(1.3);
+  
+}
+
+.post-description p{
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+/* footer */
+
+/* .footer-page{
+  background: var(--druga-tamna);
+  padding: 0.4rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+} */
+
+
+/* media query */
+
+@media screen and (max-width: 376px) {
+/* navigation */
+  .navbar{
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
 }
